@@ -1,0 +1,41 @@
+version: 2
+updates:
+#######################################################
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    open-pull-requests-limit: 25
+    versioning-strategy: increase
+    allow:
+      - dependency-name: "@nestjs/*"
+      - dependency-name: "@nestia/*"
+      - dependency-name: "nestia"
+      - dependency-name: "tstl"
+      - dependency-name: "typia"
+    groups:
+      Samchon:
+        patterns:
+          - "@nestia/*"
+          - "nestia"
+          - "tstl"
+          - "typia"
+      NestJS:
+        patterns:
+          - "@nestjs/*"
+#######################################################
+  - package-ecosystem: 'npm'
+    directory: '/packages/api'
+    schedule:
+      interval: 'daily'
+    open-pull-requests-limit: 25
+    versioning-strategy: increase
+    allow:
+      - dependency-name: "@nestia/fetcher"
+      - dependency-name: "typia"
+    groups:
+      Samchon:
+        patterns:
+          - "@nestia/fetcher"
+          - "typia"
+#######################################################
